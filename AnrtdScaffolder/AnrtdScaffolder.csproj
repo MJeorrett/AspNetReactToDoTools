@@ -10,34 +10,41 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommand.cs">
+	<FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AnrtdApi\Anrtd.Api\Controllers\XXENTITY_NAMEXXsController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommandValidator.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommand.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Commands\SoftDelete\SoftDeleteXXENTITY_NAMEXXCommand.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommandValidator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommand.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\SoftDelete\SoftDeleteXXENTITY_NAMEXXCommand.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommandValidator.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommand.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Queries\GetById\GetXXENTITY_NAMEXXByIdQuery.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommandValidator.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Queries\GetById\XXENTITY_NAMEXXDetailsDto.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetById\GetXXENTITY_NAMEXXByIdQuery.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQuery.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetById\XXENTITY_NAMEXXDetailsDto.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQueryValidator.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQuery.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Update="XXENTITY_NAMEXXs\Queries\GetPaginated\XXENTITY_NAMEXXSummaryDto.cs">
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQueryValidator.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\XXENTITY_NAMEXXSummaryDto.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

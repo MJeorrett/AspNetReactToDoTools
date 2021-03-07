@@ -9,32 +9,33 @@ namespace AnrtdScaffolder
         static void Main(string[] args)
         {
             const string entityName = "ToDoList";
-            const string apiApplicationProjectRoot = @"C:\git\github\mjeorrett\AspNetReactToDo\AnrtdApi\Anrtd.Application";
+            const string anrtdRepoRoot = @"C:\git\github\mjeorrett\AspNetReactToDo";
 
             var sourceFilePaths = new List<string>() {
-                @".\XXENTITY_NAMEXXs\Queries\GetById\GetXXENTITY_NAMEXXByIdQuery.cs",
-                @".\XXENTITY_NAMEXXs\Queries\GetById\XXENTITY_NAMEXXDetailsDto.cs",
-                @".\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQuery.cs",
-                @".\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQueryValidator.cs",
-                @".\XXENTITY_NAMEXXs\Queries\GetPaginated\XXENTITY_NAMEXXSummaryDto.cs",
-                @".\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommand.cs",
-                @".\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommandValidator.cs",
-                @".\XXENTITY_NAMEXXs\Commands\SoftDelete\SoftDeleteXXENTITY_NAMEXXCommand.cs",
-                @".\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommand.cs",
-                @".\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommandValidator.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetById\GetXXENTITY_NAMEXXByIdQuery.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetById\XXENTITY_NAMEXXDetailsDto.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQuery.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\GetPaginatedXXENTITY_NAMEXXsQueryValidator.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Queries\GetPaginated\XXENTITY_NAMEXXSummaryDto.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommand.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Create\CreateXXENTITY_NAMEXXCommandValidator.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\SoftDelete\SoftDeleteXXENTITY_NAMEXXCommand.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommand.cs",
+                @".\AnrtdApi\Anrtd.Application\XXENTITY_NAMEXXs\Commands\Update\UpdateXXENTITY_NAMEXXCommandValidator.cs",
+                @".\AnrtdApi\Anrtd.Api\Controllers\XXENTITY_NAMEXXsController.cs",
             };
 
             foreach (var sourceFilePath in sourceFilePaths)
             {
-                ScaffoldSource(entityName, apiApplicationProjectRoot, sourceFilePath);
+                ScaffoldSource(entityName, anrtdRepoRoot, sourceFilePath);
             }
         }
 
-        private static void ScaffoldSource(string entityName, string apiApplicationProjectRoot, string sourceFilePath)
+        private static void ScaffoldSource(string entityName, string anrtdRepoRoot, string sourceFilePath)
         {
             string lowerCaseEntityName = char.ToLower(entityName[0]) + entityName.Substring(1);
 
-            var destinationFilePathTemplate = Path.Join(apiApplicationProjectRoot, sourceFilePath);
+            var destinationFilePathTemplate = Path.Join(anrtdRepoRoot, sourceFilePath);
             var destinationFilePath = destinationFilePathTemplate.Replace("XXENTITY_NAMEXX", entityName);
 
             var source = File.ReadAllText(sourceFilePath)
