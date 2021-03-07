@@ -12,7 +12,7 @@ This project is in the very early stages, but if you want to try it out:
 - Fix the project reference to `Anrtd.Application` (this project compiles against AspNetReactToDo).
 - Add a new entity to the AspNetReactToDo project as follows:
 	- Create a new Entity class in the [Domain](https://github.com/MJeorrett/AspNetReactToDo/tree/main/AnrtdApi/Anrtd.Domain/Entities) project.
-	- Add the new entity to the [ApplicationDbContext](https://github.com/MJeorrett/AspNetReactToDo/blob/main/AnrtdApi/Anrtd.Infrastructure/Persistence/ApplicationDbContext.cs) in the Infrastructure project.
+	- Add the new entity to [ApplicationDbContext](https://github.com/MJeorrett/AspNetReactToDo/blob/main/AnrtdApi/Anrtd.Infrastructure/Persistence/ApplicationDbContext.cs) in the Infrastructure project.
 	- Add the new entity to [IApplicationDbContext](https://github.com/MJeorrett/AspNetReactToDo/blob/main/AnrtdApi/Anrtd.Application/Common/Interfaces/IApplicationDbContext.cs) in the Application project.
 	- Create a migration for the new entity.
 - Update the two consts in the top of `Program::Main`:
