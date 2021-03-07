@@ -10,6 +10,8 @@ namespace Anrtd.Application.XXENTITY_NAMEXXs.Commands.Create
 {
     public record CreateXXENTITY_NAMEXXCommand : IAppRequest<int>, IMapTo<XXENTITY_NAMEXXEntity>
     {
+        // XXENTITY_PROPERTIESXX
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateXXENTITY_NAMEXXCommand, XXENTITY_NAMEXXEntity>()

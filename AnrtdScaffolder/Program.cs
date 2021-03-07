@@ -9,6 +9,7 @@ namespace AnrtdScaffolder
         static void Main(string[] args)
         {
             const string entityName = "ToDoList";
+            const string entityPropertyName = "Title";
             const string anrtdRepoRoot = @"C:\git\github\mjeorrett\AspNetReactToDo";
 
             var sourceFilePaths = new List<string>() {
@@ -27,26 +28,32 @@ namespace AnrtdScaffolder
 
             foreach (var sourceFilePath in sourceFilePaths)
             {
-                ScaffoldSource(entityName, anrtdRepoRoot, sourceFilePath);
+                ScaffoldSource(entityName, entityPropertyName, anrtdRepoRoot, sourceFilePath);
             }
         }
 
-        private static void ScaffoldSource(string entityName, string anrtdRepoRoot, string sourceFilePath)
+        private static void ScaffoldSource(string entityName, string entityPropertyName, string anrtdRepoRoot, string sourceFilePath)
         {
             string lowerCaseEntityName = char.ToLower(entityName[0]) + entityName.Substring(1);
 
             var destinationFilePathTemplate = Path.Join(anrtdRepoRoot, sourceFilePath);
             var destinationFilePath = destinationFilePathTemplate.Replace("XXENTITY_NAMEXX", entityName);
 
-            var source = File.ReadAllText(sourceFilePath)
-                .Replace("XXENTITY_NAMEXX", entityName)
-                .Replace("xXENTITY_NAMEXX", lowerCaseEntityName)
-                .Replace("IPlaceholderApplicationDbContext", "IApplicationDbContext");
+            string source = ProcessSourceFile(entityName, entityPropertyName, sourceFilePath, lowerCaseEntityName);
 
             var directoryToCreate = Path.GetDirectoryName(destinationFilePath);
             Console.WriteLine($"Creating directory '{directoryToCreate}'.");
             Directory.CreateDirectory(directoryToCreate);
             File.WriteAllTextAsync(destinationFilePath, source);
+        }
+
+        private static string ProcessSourceFile(string entityName, string entityPropertyName, string sourceFilePath, string lowerCaseEntityName)
+        {
+            return File.ReadAllText(sourceFilePath)
+                .Replace("XXENTITY_NAMEXX", entityName)
+                .Replace("xXENTITY_NAMEXX", lowerCaseEntityName)
+                .Replace("IPlaceholderApplicationDbContext", "IApplicationDbContext")
+                .Replace("// XXENTITY_PROPERTIESXX", $"public string {entityPropertyName} {{ get; set; }}");
         }
     }
 }

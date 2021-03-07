@@ -14,6 +14,8 @@ namespace Anrtd.Application.XXENTITY_NAMEXXs.Commands.Update
     {
         public int XXENTITY_NAMEXXId { get; init; }
 
+        // XXENTITY_PROPERTIESXX
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<UpdateXXENTITY_NAMEXXCommand, XXENTITY_NAMEXXEntity>()

@@ -3,5 +3,7 @@
     public class XXENTITY_NAMEXXDetailsDto
     {
         public int Id { get; set; }
+
+        // XXENTITY_PROPERTIESXX
     }
 }
