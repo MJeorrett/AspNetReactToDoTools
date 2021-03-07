@@ -12,7 +12,7 @@ namespace Anrtd.Application.XXENTITY_NAMEXXs.Commands.Update
 {
     public record UpdateXXENTITY_NAMEXXCommand : IAppRequest, IMapTo<XXENTITY_NAMEXXEntity>
     {
-        public int XXENTITY_NAMEXXId { get; init; }
+        public int Id { get; init; }
 
         // XXENTITY_PROPERTIESXX
 
@@ -37,7 +37,7 @@ namespace Anrtd.Application.XXENTITY_NAMEXXs.Commands.Update
         public override async Task<AppRequestResult> Handle(UpdateXXENTITY_NAMEXXCommand request, CancellationToken cancellationToken)
         {
             var xXENTITY_NAMEXX = await _dbContext.XXENTITY_NAMEXXs
-                .SingleOrDefaultAsync(xXENTITY_NAMEXX => xXENTITY_NAMEXX.Id == request.XXENTITY_NAMEXXId, cancellationToken);
+                .SingleOrDefaultAsync(xXENTITY_NAMEXX => xXENTITY_NAMEXX.Id == request.Id, cancellationToken);
 
             if (xXENTITY_NAMEXX == default) return NotFound();
 

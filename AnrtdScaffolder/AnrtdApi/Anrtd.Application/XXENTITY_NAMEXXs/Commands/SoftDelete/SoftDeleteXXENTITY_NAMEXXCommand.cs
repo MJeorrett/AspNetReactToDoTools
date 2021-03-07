@@ -21,9 +21,9 @@ namespace Anrtd.Application.XXENTITY_NAMEXXs.Commands.SoftDelete
 
         public override async Task<AppRequestResult> Handle(SoftDeleteXXENTITY_NAMEXXCommand request, CancellationToken cancellationToken)
         {
-            var xXENTITY_NAMEXX = await _dbContext.XXENTITY_NAMEXXs.SingleAsync(xXENTITY_NAMEXX => xXENTITY_NAMEXX.Id == request.XXENTITY_NAMEXXId, cancellationToken);
+            var xXENTITY_NAMEXX = await _dbContext.XXENTITY_NAMEXXs.SingleOrDefaultAsync(xXENTITY_NAMEXX => xXENTITY_NAMEXX.Id == request.XXENTITY_NAMEXXId, cancellationToken);
 
-            if (xXENTITY_NAMEXX is null)
+            if (xXENTITY_NAMEXX == default)
             {
                 return NotFound();
             }
