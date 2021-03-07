@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Anrtd.Api.Controllers
 {
     [ApiController]
-    [Route("api/xXENTITY_NAMEXX")]
+    [Route("api/xXENTITY_NAMEXXs")]
     public class XXENTITY_NAMEXXsController : ControllerBase
     {
         private readonly IMediator _mediator;
